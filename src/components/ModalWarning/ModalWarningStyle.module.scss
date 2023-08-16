@@ -1,0 +1,20 @@
+.wrapperContentModal {
+  padding: 10px;
+}
+
+.textContentModal{
+  font-weight: 600;
+  font-size: 19px;
+  text-align: center;
+}
+
+.groupButtonSide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buttonConfirm, .buttonCancel{
+  margin: 0 5px;
+}

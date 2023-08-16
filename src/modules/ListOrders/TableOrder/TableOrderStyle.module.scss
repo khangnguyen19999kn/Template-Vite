@@ -1,0 +1,34 @@
+.tableColumn {
+  text-transform: uppercase;
+
+  background-color: #89f1ce3a;
+}
+
+.buttonAction{
+  margin:0 5px
+}
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  
+  opacity: 1;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.loadingTable {
+  opacity: 1;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.done{
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.3s ease-in-out;
+}

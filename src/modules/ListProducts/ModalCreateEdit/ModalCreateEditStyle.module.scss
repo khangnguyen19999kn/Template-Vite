@@ -1,0 +1,62 @@
+.listImage {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.buttonAddImageSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+}
+
+.buttonAddImage {
+  border-radius: 50%;
+}
+
+.imageSide {
+  position: relative;
+
+  margin: 5px;
+}
+
+.buttonRemoveImage {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 30px;
+
+  border: 1px solid;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ec3232a1;
+    border: 0;
+
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.wrapperImageList {
+  margin-top: 10px;
+}
+
+.buttonSide {
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  margin-top: 20px; 
+}
+
+.buttonSave {
+  margin-right: 5px;
+}

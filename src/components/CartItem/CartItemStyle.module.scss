@@ -1,0 +1,60 @@
+.containerCartItem {
+  position: relative;
+
+  width: 100%;
+  width: 1000px;
+  margin: 10px 0;
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttonRemoveItem {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+
+  width: 30px;
+  height: 30px;
+
+  color: #e72c2c;
+
+  background-color: #fff;
+  border: 0;
+  border: 1px solid #e72c2c;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+
+    background-color: #e72c2c;
+
+    transition: all .3s ease-in-out;
+  }
+}
+
+
+.wrapperCartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+
+}
+
+.wrapperInfoCart {
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+}
+
+.wrapperTotalPrice, .wrapperQuantity {
+ text-align: center;
+}
+
+.textQuantity, .textPrice {
+  font-weight: 700;
+  font-size: 20px;
+}

@@ -1,0 +1,27 @@
+.layoutContainer {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-left: auto;
+  overflow-x: hidden;
+  
+
+
+}
+
+.content {
+position: relative;
+right: 0;
+z-index: 10;
+
+width: 100%;
+height: fit-content;
+margin-bottom: 20px;
+
+background-color: $white;
+
+
+
+}
