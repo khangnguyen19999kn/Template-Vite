@@ -20,17 +20,17 @@ function renderChunks(deps: unknown) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor,
-          ...renderChunks(dependencies),
-        },
-      },
-    },
-  },
+  // build: {
+  //   sourcemap: false,
+  //   rollupOptions: {
+  //     output: {
+  //       manualChunks: {
+  //         vendor,
+  //         ...renderChunks(dependencies),
+  //       },
+  //     },
+  //   },
+  // },
   server: {
     hmr: true,
     port: 9999,
