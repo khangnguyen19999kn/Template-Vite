@@ -9,4 +9,6 @@ export type TProduct = {
   img: string[]; // Update the type to string[]
   quantitySold: number;
   introduce: string;
+  note: string;
+  ingredient: string;
 };

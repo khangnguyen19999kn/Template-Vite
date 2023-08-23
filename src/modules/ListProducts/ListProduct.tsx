@@ -18,7 +18,6 @@ export default function ListProduct() {
   const { data: dataSearch, refetch } = useQuery<TProduct[]>(["searchedProducts", debounced], () =>
     fetch(PRODUCT_SEARCH_API + debounced).then(res => res.json())
   );
-  console.log(dataSearch);
   const formatData = (dataFormat: TProduct[]) => {
     const formattedData: IDataTable[] = dataFormat
       ? dataFormat.map((product: TProduct) => ({
@@ -32,6 +31,8 @@ export default function ListProduct() {
           img: product.img,
           quantitySold: product.quantitySold,
           introduce: product.introduce,
+          note: product.note,
+          ingredient: product.ingredient,
         }))
       : [];
     return formattedData;

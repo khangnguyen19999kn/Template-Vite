@@ -20,7 +20,7 @@ interface IModalCreateCreateEditBlogsProps {
     options?: (RefetchOptions & RefetchQueryFilters<TPageData>) | undefined
   ) => Promise<QueryObserverResult<TBlogs[], unknown>>;
 }
-import Editor from "../Editor/Editor";
+import Editor from "../../../components/Editor/Editor";
 
 import style from "./ModalCreateEditBlogsStyle.module.scss";
 
@@ -220,6 +220,7 @@ export default function ModalCreateEditBlog({
           <Editor
             {...form.getInputProps("content")}
             value={contentFrom}
+            hasImage={true}
             handleEditorChange={handleEditorChange}
           />
         </div>

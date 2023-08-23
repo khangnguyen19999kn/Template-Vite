@@ -3,10 +3,11 @@ import { useForm } from "@mantine/form";
 import { notifications } from "@mantine/notifications";
 import { IconCheck } from "@tabler/icons-react";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { RefetchOptions, RefetchQueryFilters, QueryObserverResult } from "react-query";
 
 import { IBrand, IDataTable } from "@/@types/product";
+import Editor from "@/components/Editor/Editor";
 import { BRAND_API, BRAND_SEARCH_BY_NAME_API, PRODUCT_API } from "@/constant/API/API";
 import { TProduct } from "@/constant/Types/product";
 import { baseformProduct } from "@/constant/variable/baseform";
@@ -37,6 +38,17 @@ export default function FormProduct({
   listFileUp,
   setListFileUp,
 }: IFormProductProps) {
+  const [contentNoteForm, setContentNoteForm] = useState<string>("");
+  const [contentIngredientFrom, setContentIngredientFrom] = useState<string>("");
+
+  const handleEditorContentNoteChange = (content: string) => {
+    setContentNoteForm(content);
+    form.setFieldValue("note", content);
+  };
+  const handleEditorContentIngredientChange = (content: string) => {
+    setContentIngredientFrom(content);
+    form.setFieldValue("ingredient", content);
+  };
   const checkValueSelect = (value: string | number | string[] | undefined) => {
     if (typeof value === "string" && value !== null) {
       return value;
@@ -134,6 +146,8 @@ export default function FormProduct({
     form.setValues({
       ...productEdit,
     });
+    handleEditorContentIngredientChange(productEdit?.ingredient as string);
+    handleEditorContentNoteChange(productEdit?.note as string);
   }, [productEdit]);
   const checkBrandHasExist = async (brand: string) => {
     await axios
@@ -163,6 +177,8 @@ export default function FormProduct({
         "priceForFull",
         "quantitySold",
         "introduce",
+        "note",
+        "ingredient",
       ];
       fieldToAppend.forEach(field => {
         data.append(field, form.values[field].toString());
@@ -172,7 +188,6 @@ export default function FormProduct({
       listFileUp.forEach(file => {
         data.append("img", file);
       });
-      console.log(listFileUp.length);
       if (type === "create") {
         await checkBrandHasExist(data.get("brand") as string);
         axios
@@ -195,7 +210,6 @@ export default function FormProduct({
       } else {
         if (id) {
           await checkBrandHasExist(data.get("brand") as string);
-
           axios
             .put(PRODUCT_API + id, data)
             .then(async () => {
@@ -297,6 +311,24 @@ export default function FormProduct({
         onChange={value => onChangeNumber(value, "quantitySold")}
         hideControls
       />
+      <div className={style.wrapperImageList}>
+        <Text fw={500}>Note</Text>
+        <Editor
+          {...form.getInputProps("note")}
+          value={contentNoteForm}
+          height="300px"
+          handleEditorChange={handleEditorContentNoteChange}
+        />
+      </div>
+      <div className={style.wrapperImageList}>
+        <Text fw={500}>Ingredient</Text>
+        <Editor
+          {...form.getInputProps("ingredient")}
+          value={contentIngredientFrom}
+          height="300px"
+          handleEditorChange={handleEditorContentIngredientChange}
+        />
+      </div>
 
       <div className={style.buttonSide}>
         <Button className={style.buttonSave} type="submit">
