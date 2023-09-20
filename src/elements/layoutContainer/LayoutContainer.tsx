@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-import FooterSection from "@/modules/FooterSection/FooterSection";
-import NavbarSection from "@/modules/NavbarSection/NavbarSection";
+import Footer from "@/modules/Footer/Footer";
+import Header from "@/modules/Header/Header";
 
 import style from "./LayoutContainerStyle.module.scss";
 const LayoutContainer = ({ children }: { children: ReactNode }) => {
@@ -16,12 +16,12 @@ const LayoutContainer = ({ children }: { children: ReactNode }) => {
           width: "10%",
         }}
       >
-        <NavbarSection />
+        <Header />
       </div>
       <section className={style.layoutContainer}>
         <div className={style.content}>{children}</div>
-        <FooterSection />
       </section>
+      <Footer />
     </div>
   );
 };

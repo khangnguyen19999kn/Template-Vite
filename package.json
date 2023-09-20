@@ -16,21 +16,11 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/utils": "^1.2.1",
-    "@mantine/core": "^6.0.16",
-    "@mantine/form": "^6.0.17",
-    "@mantine/hooks": "^6.0.16",
-    "@mantine/notifications": "^6.0.17",
     "@tabler/icons-react": "^2.25.0",
-    "axios": "^1.4.0",
     "nanoid": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-infinite-scroll-component": "^6.1.0",
-    "react-query": "^3.39.3",
-    "react-router-dom": "^6.10.0",
-    "react-scroll": "^1.8.9",
-    "suneditor": "^2.45.1",
-    "suneditor-react": "^3.6.1"
+    "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.1",
